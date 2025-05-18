@@ -1,2 +1,2 @@
-# Toko-Samba-cook
-Toko yang menjual sembako &amp; bahan masakan 
+# Mr_DIAK
+Semua yang Anda perlukan hanya ada di Mr_DIAK
