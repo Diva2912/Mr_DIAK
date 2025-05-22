@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Beranda - Mr_DIAK</title>
+  <title>Kategori Produk - Mr_DIAK</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -37,15 +37,29 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.php" class="logo d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
         <span class="d-none d-lg-block">Mr_DIAK</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
@@ -56,10 +70,6 @@
             <li class="dropdown-header">
               <h6>Diva Arya Kusuma</h6>
               <span>Admin</span>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
             </li>
             <li>
               <a class="dropdown-item d-flex align-items-center" href="logout.php">
@@ -82,23 +92,23 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.php">
+        <a class="nav-link collapsed" href="index.php">
           <i class="bi bi-house-door"></i>
           <span>Beranda</span>
         </a>
-      </li><!-- End Beranda Nav -->
+      </li><!-- End Beranda Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="kategori.php">
-          <i class="bi bi-tags">
-          </i><span>Kategori Produk</span>
+          <i class="bi bi-tags"></i>
+          <span>Kategori Produk</span>
         </a>
       </li><!-- End Kategori Produk Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="produk.php">
-          <i class="bi bi-shop">
-          </i><span>Produk</span>
+          <i class="bi bi-shop"><i>
+          <span>Produk</span>
         </a>
       </li><!-- End Produk Page Nav -->
 
@@ -118,12 +128,13 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="laporan.php">
-          <i class="bi bi-file-earmark-bar-graph">
-          </i><span>Laporan</span>
+          <i class="bi bi-file-earmark-bar-graph"></i>
+          <span>Laporan</span>
         </a>
       </li><!-- End Laporan Page Nav -->
+
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="pengguna.php">
           <i class="bi bi-people"></i>
           <span>Pengguna</span>
         </a>
@@ -135,76 +146,95 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Beranda</h1>
+      <h1>Kategori Produk</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
-          <li class="breadcrumb-item active">Beranda</li>
+          <li class="breadcrumb-item active">Kategori Produk</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
-    <section class="section dashboard">
-      <div class="row">
-
-        <!-- Left side columns -->
-        <div class="col-lg-8">
-          <div class="row">
-
-           <!-- Welcome Card -->
-            <div class="col-12">
-              <div class="card info-card customers-card">
-                <div class="card-body">
-                  <h5 class="mb-2">Selamat Datang di Website Admin <strong>Mr_DIAK!</strong></h5>
-                    <span class="text-muted small mb-0">Kelola produk, transaksi, dan pelanggan dengan mudah.</span>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="t_kategori.php" class="btn btn-primary mt-3">
+                            <i class="bi bi-plus-lg"></i> Tambah Data
+                        </a>
                     </div>
-                  </div>
                 </div>
-            <!-- End Welcome Card -->
-
-           <!-- Orders Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
-
-                <div class="card-body">
-                  <h5 class="card-title">Pesanan <span>| Semua Waktu</span></h5>
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-basket"></i> <!-- Ikon keranjang belanja -->
-                    </div>
-                    <div class="ps-3">
-                      <h6>0</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-            <!-- End Orders Card -->
+        </div>
 
-            <!-- Revenue Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card revenue-card">
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Table with stripped rows -->
+                            <table class="table table-striped mt-2">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Kategori</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    include "koneksi.php";
+                                    $no = 1;
 
-                <div class="card-body">
-                  <h5 class="card-title">Pendapatan <span>| Hari ini</span></h5>
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
+                                    // Cek apakah ada pencarian
+                                    $query = isset($_POST['query']) ? mysqli_real_escape_string($koneksi, $_POST['query']) : '';
+
+                                    // Query dasar
+                                    $sql_query = "SELECT id_ktg, nm_ktg FROM tb_ktg";
+
+                                    // Jika ada pencarian, tambahkan kondisi WHERE
+                                    if (!empty($query)) {
+                                        $sql_query .= " WHERE nm_ktg LIKE '%$query%'";
+                                    }
+
+                                    $sql = mysqli_query($koneksi, $sql_query);
+
+                                    if (mysqli_num_rows($sql) > 0) {
+                                        while ($hasil = mysqli_fetch_array($sql)) {
+                                    ?>
+                                            <tr>
+                                                <td><?php echo $no++; ?></td>
+                                                <td><?php echo $hasil['nm_ktg']; ?></td>
+                                                <td>
+                                                    <a href="e_kategori.php?id=<?php echo $hasil['id_ktg']; ?>" class="btn btn-warning">
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </a>
+                                                    <a href="h_ktg.php?id=<?php echo $hasil['id_ktg']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data?')">
+                                                        <i class="bi bi-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <tr>
+                                            <td colspan="3" class="text-center">Data tidak ditemukan</td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+
+                                </tbody>
+                            </table>
+                            <!-- End Table with stripped rows -->   
+          
+                        </div>
                     </div>
-                    <div class="ps-3">
-                      <h6>0</h6>
-                    </div>
-                  </div>
+
                 </div>
-
-              </div>
             </div>
-
-            <!-- End Revenue Card -->
-          </div>
-        </div><!-- End Left side columns -->
-      </div>
-    </section>
+        </section>
 
   </main><!-- End #main -->
 
