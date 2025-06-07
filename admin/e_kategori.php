@@ -6,7 +6,7 @@ $sql = mysqli_query($koneksi, "SELECT * FROM tb_ktg WHERE id_ktg = '$id'");
 $data = mysqli_fetch_array($sql);
 
 if (isset($_POST['simpan'])) {
-    $nm_kategori = $_POST['nm_ktg'];
+    $nm_ktg = $_POST['nm_ktg'];
 
     $query = mysqli_query($koneksi, "UPDATE tb_ktg SET nm_ktg = '$nm_ktg' WHERE id_ktg = '$id'");
     if ($query) {
@@ -61,7 +61,7 @@ if (isset($_POST['simpan'])) {
         <div class="d-flex align-items-center justify-content-between">
             <a href="index.php" class="logo d-flex align-items-center">
                 <img src="assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">Furnimart</span>
+                <span class="d-none d-lg-block">Mr_DIAK</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -72,7 +72,7 @@ if (isset($_POST['simpan'])) {
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="assets/img/user.jpg" alt="Profile" class="rounded-circle">
+                        <img src="http://localhost/Mr_DIAK/admin/assets/img/Diva.jpg" alt="Profile" class="rounded-circle">
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
@@ -171,8 +171,8 @@ if (isset($_POST['simpan'])) {
                         <div class="card-body">
                             <form class="row g-3 mt-2" method="post">
                                 <div class="col-12">
-                                    <label for="nm_kategori" class="form-label">Nama Kategori</label>
-                                    <input type="text" class="form-control" id="nm_kategori" name="nm_kategori" placeholder="Masukkan Nama Kategori Produk" value="<?php echo $data['nm_kategori']; ?>">
+                                    <label for="nm_ktg" class="form-label">Nama Kategori</label>
+                                    <input type="text" class="form-control" id="nm_ktg" name="nm_ktg" placeholder="Masukkan Nama Kategori Produk" value="<?php echo $data['nm_ktg']; ?>">
                                 </div>
                                 <div class="text-center">
                                     <button type="reset" class="btn btn-secondary">Reset</button>
@@ -191,7 +191,7 @@ if (isset($_POST['simpan'])) {
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
-            &copy; Copyright <strong><span>Furnimart</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>Mr_DIAK</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
             Designed by <a href="https://www.instagram.com/dxvaryksm.__/#" target="_blank">Diva Arya Kusuma</a>

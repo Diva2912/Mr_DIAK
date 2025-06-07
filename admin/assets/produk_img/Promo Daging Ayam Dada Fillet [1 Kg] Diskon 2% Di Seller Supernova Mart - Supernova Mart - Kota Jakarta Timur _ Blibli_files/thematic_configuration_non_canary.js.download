@@ -1,0 +1,5 @@
+window._BLIBLI_LOGO_URL = 'https://www.static-src.com/siva/asset/08_2024/Payday-Elektronik---Skin-Homepage_Logo.png';
+window._BACKGROUND_HEADER_DESKTOP_URL = 'https://www.static-src.com/siva/asset/05_2025/Payday-May---Skin-f.jpg';
+window._BACKGROUND_HEADER_MOBILE_URL = 'https://www.static-src.com/siva/asset/05_2025/Payday-May---Skin-stAppHeader.jpg';
+window._BACKGROUND_CAROUSEL_MOBILE_URL = 'https://www.static-src.com/siva/asset/05_2025/Payday-May---Skin-srAppFirstFold.jpg';
+window._FESTIVE_MODE = 'true';

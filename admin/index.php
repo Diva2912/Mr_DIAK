@@ -1,3 +1,24 @@
+<?php
+session_start();
+include "koneksi.php";
+
+// Cek apakah sudah login
+if (!isset($_SESSION["login"])) {
+  header("Location: login.php");
+  exit;
+}
+
+// Cek apakah status tersedia dan pastikan user adalah admin
+if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
+  echo "<script>
+    alert('Akses ditolak! Halaman ini hanya untuk Admin.');
+    window.location.href='login.php';
+  </script>";
+  exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,12 +70,12 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="admin/assets/img/Diva.jpg" alt="Profile" class="rounded-circle">
+            <img src="http://localhost/Mr_DIAK/admin/assets/img/Diva.jpg" alt="Profile" class="rounded-circle">
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Diva Arya Kusuma</h6>
+              <h6><?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Guest'; ?></h6>
               <span>Admin</span>
             </li>
 
@@ -123,7 +144,7 @@
         </a>
       </li><!-- End Laporan Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="pengguna.php">
           <i class="bi bi-people"></i>
           <span>Pengguna</span>
         </a>
@@ -153,14 +174,26 @@
 
            <!-- Welcome Card -->
             <div class="col-12">
-              <div class="card info-card customers-card">
-                <div class="card-body">
-                  <h5 class="mb-2">Selamat Datang di Website Admin <strong>Mr_DIAK!</strong></h5>
+              <div class="card info-card customers-card shadow-sm w-100">
+                <div class="card-body text-center py-4">
+                  <h4 class="mb-2">Selamat Datang di Website Admin <strong>Mr_DIAK!</strong></h4>
                     <span class="text-muted small mb-0">Kelola produk, transaksi, dan pelanggan dengan mudah.</span>
                     </div>
                   </div>
                 </div>
             <!-- End Welcome Card -->
+
+            
+            <?php
+            // Koneksi ke database
+            include 'koneksi.php'; // Sesuaikan dengan file koneksi yang kamu gunakan
+
+            // Ambil total jumlah pesanan dari tabel tb_pesanan
+            $query = "SELECT COUNT(*) AS total_pesanan FROM tb_jual";
+            $result = mysqli_query($koneksi, $query);
+            $data = mysqli_fetch_assoc($result);
+            $totalPesanan = $data['total_pesanan'] ?? 0; // Default ke 0 jika tidak ada pesanan
+            ?>
 
            <!-- Orders Card -->
             <div class="col-xxl-4 col-md-6">
@@ -173,13 +206,27 @@
                       <i class="bi bi-basket"></i> <!-- Ikon keranjang belanja -->
                     </div>
                     <div class="ps-3">
-                      <h6>0</h6>
+                      <h6><?php echo $totalPesanan; ?></h6>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <!-- End Orders Card -->
+
+            <?php
+            include 'koneksi.php';
+
+            // Ambil tanggal hari ini
+            $tanggalHariIni = date("Y-m-d");
+
+            // Query langsung ke tb_jual berdasarkan tanggal hari ini
+            $query = "SELECT SUM(total) AS total_revenue FROM tb_jual WHERE DATE(tgl_jual) = '$tanggalHariIni'";
+
+            $result = mysqli_query($koneksi, $query);
+            $data = mysqli_fetch_assoc($result);
+            $totalRevenue = $data['total_revenue'] ?? 0;
+            ?>
 
             <!-- Revenue Card -->
             <div class="col-xxl-4 col-md-6">
@@ -192,7 +239,7 @@
                       <i class="bi bi-currency-dollar"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>0</h6>
+                      <h6>Rp<?php echo number_format($totalRevenue, 0, ',', '.'); ?></h6>
                     </div>
                   </div>
                 </div>
