@@ -66,7 +66,7 @@ $html = '<html>
 </head>
 <body>
 
-<h1 align="center">Freshly.id</h1>
+<h1 align="center">Mr_DIAK</h1>
 <hr>
 <h1 align="center">LAPORAN DATA PRODUK</h1>
 
