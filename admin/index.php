@@ -26,7 +26,7 @@ if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Beranda - Mr_DIAK</title>
+  <title>Beranda - Mr_DIAK Admin</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -103,7 +103,7 @@ if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.php">
+        <a class="nav-link" href="index.php">
           <i class="bi bi-house-door"></i>
           <span>Beranda</span>
         </a>
@@ -111,15 +111,15 @@ if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="kategori.php">
-          <i class="bi bi-tags">
-          </i><span>Kategori Produk</span>
+          <i class="bi bi-tags"></i>
+          <span>Kategori Produk</span>
         </a>
       </li><!-- End Kategori Produk Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="produk.php">
-          <i class="bi bi-shop">
-          </i><span>Produk</span>
+          <i class="bi bi-shop"></i>
+          <span>Produk</span>
         </a>
       </li><!-- End Produk Page Nav -->
 
@@ -139,8 +139,8 @@ if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="laporan.php">
-          <i class="bi bi-file-earmark-bar-graph">
-          </i><span>Laporan</span>
+          <i class="bi bi-file-earmark-bar-graph"></i>
+          <span>Laporan</span>
         </a>
       </li><!-- End Laporan Page Nav -->
       <li class="nav-item">
@@ -159,7 +159,7 @@ if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
       <h1>Beranda</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
           <li class="breadcrumb-item active">Beranda</li>
         </ol>
       </nav>
@@ -172,18 +172,18 @@ if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
         <div class="col-lg-8">
           <div class="row">
 
-           <!-- Welcome Card -->
+            <!-- Welcome Card -->
             <div class="col-12">
               <div class="card info-card customers-card shadow-sm w-100">
                 <div class="card-body text-center py-4">
-                  <h4 class="mb-2">Selamat Datang di Website Admin <strong>Mr_DIAK!</strong></h4>
-                    <span class="text-muted small mb-0">Kelola produk, transaksi, dan pelanggan dengan mudah.</span>
-                    </div>
-                  </div>
+                  <h4 class="mb-2">Selamat datang di Website Admin <strong>Mr_DIAK</strong></h4>
+                  <p class="text-muted small mb-0">Kelola produk, transaksi, dan pelanggan dengan mudah.</p>
                 </div>
+              </div>
+            </div>
             <!-- End Welcome Card -->
 
-            
+
             <?php
             // Koneksi ke database
             include 'koneksi.php'; // Sesuaikan dengan file koneksi yang kamu gunakan
@@ -195,7 +195,7 @@ if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
             $totalPesanan = $data['total_pesanan'] ?? 0; // Default ke 0 jika tidak ada pesanan
             ?>
 
-           <!-- Orders Card -->
+            <!-- Orders Card -->
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
 
@@ -265,7 +265,7 @@ if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://www.instagram.com/dxvaryksm.__/#">Diva Arya Kusuma</a>
+      Designed by <a href="https://www.instagram.com/dxvaryksm.__/#" target="_blank">Diva Arya Kusuma</a>
     </div>
   </footer><!-- End Footer -->
 
